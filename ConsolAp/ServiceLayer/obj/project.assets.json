@@ -2,16 +2,6 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Courseapp/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "compile": {
-          "bin/placeholder/Courseapp.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Courseapp.dll": {}
-        }
-      },
       "DomainLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -38,11 +28,6 @@
     }
   },
   "libraries": {
-    "Courseapp/1.0.0": {
-      "type": "project",
-      "path": "../Courseapp/Courseapp.csproj",
-      "msbuildProject": "../Courseapp/Courseapp.csproj"
-    },
     "DomainLayer/1.0.0": {
       "type": "project",
       "path": "../DomainLayer/DomainLayer.csproj",
@@ -56,28 +41,27 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Courseapp >= 1.0.0",
       "RepositoryLayer >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Classtime.PC_6_213_5\\.nuget\\packages\\": {},
+    "C:\\Users\\ASUS\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Classtime.PC_6_213_5\\Desktop\\ConsoleApp\\ConsolAp\\ServiceLayer\\ServiceLayer.csproj",
+      "projectUniqueName": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\ServiceLayer\\ServiceLayer.csproj",
       "projectName": "ServiceLayer",
-      "projectPath": "C:\\Users\\Classtime.PC_6_213_5\\Desktop\\ConsoleApp\\ConsolAp\\ServiceLayer\\ServiceLayer.csproj",
-      "packagesPath": "C:\\Users\\Classtime.PC_6_213_5\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Classtime.PC_6_213_5\\Desktop\\ConsoleApp\\ConsolAp\\ServiceLayer\\obj\\",
+      "projectPath": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\ServiceLayer\\ServiceLayer.csproj",
+      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\ServiceLayer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Classtime.PC_6_213_5\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -92,11 +76,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Classtime.PC_6_213_5\\Desktop\\ConsoleApp\\ConsolAp\\Courseapp\\Courseapp.csproj": {
-              "projectPath": "C:\\Users\\Classtime.PC_6_213_5\\Desktop\\ConsoleApp\\ConsolAp\\Courseapp\\Courseapp.csproj"
-            },
-            "C:\\Users\\Classtime.PC_6_213_5\\Desktop\\ConsoleApp\\ConsolAp\\RepositoryLayer\\RepositoryLayer.csproj": {
-              "projectPath": "C:\\Users\\Classtime.PC_6_213_5\\Desktop\\ConsoleApp\\ConsolAp\\RepositoryLayer\\RepositoryLayer.csproj"
+            "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\RepositoryLayer\\RepositoryLayer.csproj": {
+              "projectPath": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\RepositoryLayer\\RepositoryLayer.csproj"
             }
           }
         }
@@ -111,7 +92,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.200"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0": {
@@ -132,7 +113,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
