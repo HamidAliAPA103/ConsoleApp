@@ -3,28 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2642EEEC-A0C8-46FE-8F72-9C1E2490591B}|Courseapp\\Courseapp.csproj|c:\\users\\asus\\desktop\\consoleapp\\consolap\\courseapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2642EEEC-A0C8-46FE-8F72-9C1E2490591B}|Courseapp\\Courseapp.csproj|solutionrelative:courseapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2642EEEC-A0C8-46FE-8F72-9C1E2490591B}|Courseapp\\Courseapp.csproj|c:\\users\\asus\\desktop\\consoleapp\\consolap\\courseapp\\controlers\\coursegroupcontrolers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2642EEEC-A0C8-46FE-8F72-9C1E2490591B}|Courseapp\\Courseapp.csproj|solutionrelative:courseapp\\controlers\\coursegroupcontrolers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{78177328-305C-42D1-8269-CE5E19BCE8A4}|RepositoryLayer\\RepositoryLayer.csproj|c:\\users\\asus\\desktop\\consoleapp\\consolap\\repositorylayer\\repositories\\implementations\\coursegrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78177328-305C-42D1-8269-CE5E19BCE8A4}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\repositories\\implementations\\coursegrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C6680195-9EC4-4FA8-9DC1-11EAA0325944}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\asus\\desktop\\consoleapp\\consolap\\servicelayer\\service\\implementations\\coursegroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C6680195-9EC4-4FA8-9DC1-11EAA0325944}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\service\\implementations\\coursegroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C6680195-9EC4-4FA8-9DC1-11EAA0325944}|ServiceLayer\\ServiceLayer.csproj|c:\\users\\asus\\desktop\\consoleapp\\consolap\\servicelayer\\service\\interfaces\\icoursegroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C6680195-9EC4-4FA8-9DC1-11EAA0325944}|ServiceLayer\\ServiceLayer.csproj|solutionrelative:servicelayer\\service\\interfaces\\icoursegroupservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{78177328-305C-42D1-8269-CE5E19BCE8A4}|RepositoryLayer\\RepositoryLayer.csproj|c:\\users\\asus\\desktop\\consoleapp\\consolap\\repositorylayer\\repositories\\implementations\\coursegrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{78177328-305C-42D1-8269-CE5E19BCE8A4}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\repositories\\implementations\\coursegrouprepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{78177328-305C-42D1-8269-CE5E19BCE8A4}|RepositoryLayer\\RepositoryLayer.csproj|c:\\users\\asus\\desktop\\consoleapp\\consolap\\repositorylayer\\repositories\\interfaces\\icoursegrouprepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{78177328-305C-42D1-8269-CE5E19BCE8A4}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\repositories\\interfaces\\icoursegrouprepositories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2642EEEC-A0C8-46FE-8F72-9C1E2490591B}|Courseapp\\Courseapp.csproj|c:\\users\\asus\\desktop\\consoleapp\\consolap\\courseapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2642EEEC-A0C8-46FE-8F72-9C1E2490591B}|Courseapp\\Courseapp.csproj|solutionrelative:courseapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -44,7 +36,7 @@
               "RelativeDocumentMoniker": "RepositoryLayer\\Repositories\\Implementations\\CourseGroupRepository.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\RepositoryLayer\\Repositories\\Implementations\\CourseGroupRepository.cs",
               "RelativeToolTip": "RepositoryLayer\\Repositories\\Implementations\\CourseGroupRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAiwCQAAABVAAAAAAAAAA==",
+              "ViewState": "AgIAACIAAAAAAAAAAAAYwDIAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-09T18:59:58.47Z",
               "EditorCaption": ""
@@ -52,66 +44,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CourseGroupControlers.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\Courseapp\\Controlers\\CourseGroupControlers.cs",
-              "RelativeDocumentMoniker": "Courseapp\\Controlers\\CourseGroupControlers.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\Courseapp\\Controlers\\CourseGroupControlers.cs",
-              "RelativeToolTip": "Courseapp\\Controlers\\CourseGroupControlers.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAAAAFEAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-11T16:20:58.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\Courseapp\\Program.cs",
-              "RelativeDocumentMoniker": "Courseapp\\Program.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\Courseapp\\Program.cs",
-              "RelativeToolTip": "Courseapp\\Program.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAA8AAABsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-09T17:36:30.945Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "CourseGroupService.cs",
               "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\ServiceLayer\\Service\\Implementations\\CourseGroupService.cs",
               "RelativeDocumentMoniker": "ServiceLayer\\Service\\Implementations\\CourseGroupService.cs",
               "ToolTip": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\ServiceLayer\\Service\\Implementations\\CourseGroupService.cs",
               "RelativeToolTip": "ServiceLayer\\Service\\Implementations\\CourseGroupService.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwDYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAmwEQAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-10T05:54:57.343Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ICourseGroupService.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\ServiceLayer\\Service\\Interfaces\\ICourseGroupService.cs",
-              "RelativeDocumentMoniker": "ServiceLayer\\Service\\Interfaces\\ICourseGroupService.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\ServiceLayer\\Service\\Interfaces\\ICourseGroupService.cs",
-              "RelativeToolTip": "ServiceLayer\\Service\\Interfaces\\ICourseGroupService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAABEAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "CourseGroupControlers.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\Courseapp\\Controlers\\CourseGroupControlers.cs",
+              "RelativeDocumentMoniker": "Courseapp\\Controlers\\CourseGroupControlers.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\Courseapp\\Controlers\\CourseGroupControlers.cs",
+              "RelativeToolTip": "Courseapp\\Controlers\\CourseGroupControlers.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAowI4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T05:28:35.667Z",
+              "WhenOpened": "2026-04-11T16:20:58.857Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ICourseGroupRepositories.cs",
-              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\RepositoryLayer\\Repositories\\Interfaces\\ICourseGroupRepositories.cs",
-              "RelativeDocumentMoniker": "RepositoryLayer\\Repositories\\Interfaces\\ICourseGroupRepositories.cs",
-              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\RepositoryLayer\\Repositories\\Interfaces\\ICourseGroupRepositories.cs",
-              "RelativeToolTip": "RepositoryLayer\\Repositories\\Interfaces\\ICourseGroupRepositories.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBUAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\Courseapp\\Program.cs",
+              "RelativeDocumentMoniker": "Courseapp\\Program.cs",
+              "ToolTip": "C:\\Users\\ASUS\\Desktop\\ConsoleApp\\ConsolAp\\Courseapp\\Program.cs",
+              "RelativeToolTip": "Courseapp\\Program.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACwAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-10T04:27:40.566Z",
+              "WhenOpened": "2026-04-09T17:36:30.945Z",
               "EditorCaption": ""
             }
           ]

@@ -82,5 +82,98 @@ namespace Courseapp.Controlers
                 Helper.ConsolColor(ConsoleColor.Red,"Pleas add Group");
             }
         }
+
+        public void Delete()  
+        {
+        delete: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Id");
+
+            string groupid = Console.ReadLine();
+
+            int id;
+
+            bool isid = int.TryParse(groupid, out id);
+            List<CourseGroup> courseGroups = new();
+            if (courseGroups.Count == 0)
+            {
+                Helper.ConsolColor(ConsoleColor.DarkRed, "Your dont have Group");
+            }
+            else
+            {
+                if (isid)
+                {
+                    CourseGroup courseGroup = service.GetGroupById(id);
+                    if (courseGroup != null)
+                    {
+                        service.DeleteGroup(id);
+                        Helper.ConsolColor(ConsoleColor.Green, $"Group{id} deleted successfully");
+                    }
+                    else
+                    {
+                        Helper.ConsolColor(ConsoleColor.Red, "Group not found");
+
+                    }
+                }
+                else
+                {
+                    Helper.ConsolColor(ConsoleColor.Red, "Add corret  Group Id Type");
+                    goto delete;
+                }
+            }
+        }
+
+        public void SearchGroupName()
+        {
+            Helper.ConsolColor(ConsoleColor.Cyan , "Add Group Search Name");
+            string name = Console.ReadLine();
+            List <CourseGroup > courseGroups =service.SearchMethodForGroupsByName (name);
+
+            if (courseGroups.Count != 0)
+            {
+                foreach (var group in courseGroups)
+                {
+                    Helper.ConsolColor(ConsoleColor.Green, $"Group:{group.id} - Group name:{group.Name} - Group teacher:{group.Teacher} - Group room:{group.Room} ");
+                }
+            }
+            else
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Group not found");
+            }
+
+        }
+        public void Update()
+        {
+          Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Id");
+
+            string groupid = Console.ReadLine();
+
+            if (string.IsNullOrWhiteSpace(groupid))
+            {
+                Helper.ConsolColor(ConsoleColor.DarkRed, "Update operation canseled");
+            }
+
+            int id;
+
+            bool isid = int.TryParse(groupid, out id);
+
+            if ( isid)
+            {
+                var findgroup = service.GetGroupById(id);
+
+                if (findgroup != null)
+                {
+                    Helper.ConsolColor(ConsoleColor.DarkBlue, $"Curren name{findgroup.Name} Add new group name");
+
+                    string newgroupname = Console.ReadLine();
+
+                    Helper.ConsolColor(ConsoleColor.DarkBlue, $"Curren teacher name{findgroup.Teacher} Add new teacher name");
+
+                    string newteachername = Console.ReadLine();
+                }
+            }
+
+        }
+          
+
+
     }
 }

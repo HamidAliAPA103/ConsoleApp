@@ -12,7 +12,7 @@ namespace ServiceLayer.Service.Interfaces
     {
   
         CourseGroup  CreatGroup(CourseGroup courseGroup );
-        CourseGroup  UpdateGroup(CourseGroup courseGroup  );
+        CourseGroup  UpdateGroup(int id,CourseGroup courseGroup  );
         void DeleteGroup(int id);
         CourseGroup  GetGroupById(int id);
         List<CourseGroup > GetAllGroupsByTeacher(string teacher );

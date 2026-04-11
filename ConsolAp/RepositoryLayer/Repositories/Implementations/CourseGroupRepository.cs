@@ -25,24 +25,34 @@ namespace RepositoryLayer.Repositories.Implementations
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-               
+
             }
         }
-
-
         public CourseGroup GetGroupById(Predicate<CourseGroup> predicate)
         {
             return predicate != null ? AppDbConText<CourseGroup>.datas.Find(predicate) : null;
         }
         public List<CourseGroup> GetAllGroups(Predicate<CourseGroup> predicate = null)
         {
-           return predicate != null ? AppDbConText<CourseGroup>.datas.FindAll(predicate) : AppDbConText <CourseGroup >.datas;
+            return predicate != null ? AppDbConText<CourseGroup>.datas.FindAll(predicate) : AppDbConText<CourseGroup>.datas;
         }
-        public void DeleteGroup(int id)
+        public void DeleteGroup(CourseGroup data)
         {
-            throw new NotImplementedException();
+            AppDbConText<CourseGroup>.datas.Remove(data);
         }
 
+        public List<CourseGroup> SearchMethodForGroupsByName(Predicate<CourseGroup> predicate)
+        {
+            return predicate != null ? AppDbConText<CourseGroup>.datas.FindAll(predicate) : AppDbConText<CourseGroup>.datas;
+        }
+        public void UpdateGroup(CourseGroup data)
+        {
+            CourseGroup dbcourseGroup = GetGroupById(l => l.id == data.id);
+          
+            dbcourseGroup.Teacher = data.Teacher;
+            dbcourseGroup.Name = data.Name;
+            dbcourseGroup.Room = data.Room;
+        }
 
         public List<CourseGroup> GetAllGroupsByRoom(Predicate<CourseGroup> predicate)
         {
@@ -55,14 +65,6 @@ namespace RepositoryLayer.Repositories.Implementations
         }
 
 
-        public List<CourseGroup> SearchMethodForGroupsByName(Predicate<CourseGroup> predicate)
-        {
-            throw new NotImplementedException();
-        }
 
-        public void UpdateGroup(CourseGroup data)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -29,16 +29,6 @@ namespace ServiceLayer.Service.Implementations
             return courseGroup;
         }
 
-        public void DeleteGroup(int id)
-        {
-            var group = AppDbConText<CourseGroup>.datas.Find(g => g.id == id);
-
-            if (group is null)
-            {
-                Console.WriteLine("Null deyer yazilmaz");
-            }
-            AppDbConText<CourseGroup>.datas.Remove(group);
-        }
         public CourseGroup GetGroupById(int id)
         {
             var group = AppDbConText<CourseGroup>.datas.Find(g => g.id == id);
@@ -50,12 +40,35 @@ namespace ServiceLayer.Service.Implementations
 
             return group;
         }
+        public void DeleteGroup(int id)
+        {
+           CourseGroup courseGroup = GetGroupById (id);
+
+            _groupRepository.DeleteGroup (courseGroup);
+        }
 
         public List<CourseGroup> GetAllGroups()
         {
             return _groupRepository.GetAllGroups();
         }
 
+        public List<CourseGroup> SearchMethodForGroupsByName(string name)
+        {
+            return _groupRepository.GetAllGroups(l=>l.Name.ToLower().Trim() == name.ToLower().Trim() );
+        }
+        public CourseGroup UpdateGroup(int id,CourseGroup courseGroup)
+        {
+            CourseGroup dbcourseGroup = GetGroupById (id);
+
+            if (dbcourseGroup is null) return null ;
+
+            dbcourseGroup.id = id;
+
+            _groupRepository.UpdateGroup (dbcourseGroup);
+
+            return GetGroupById (id);
+
+        }
         public List<CourseGroup> GetAllGroupsByRoom(int room)
         {
             throw new NotImplementedException();
@@ -67,15 +80,8 @@ namespace ServiceLayer.Service.Implementations
         }
 
 
-        public List<CourseGroup> SearchMethodForGroupsByName(string name)
-        {
-            throw new NotImplementedException();
-        }
 
-        public CourseGroup UpdateGroup(CourseGroup courseGroup)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }
 

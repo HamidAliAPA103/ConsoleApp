@@ -1,4 +1,5 @@
 ﻿using DomainLayer.Common;
+using DomainLayer.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ namespace RepositoryLayer.Repositories.Interfaces
     {
         void CreatGroup(T data);
         void UpdateGroup(T data);
-        void DeleteGroup(int id);
+        void DeleteGroup(CourseGroup data);
         T GetGroupById(Predicate<T> predicate);
         List<T> GetAllGroupsByTeacher(Predicate<T> predicate);
 
