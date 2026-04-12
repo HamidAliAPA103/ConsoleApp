@@ -137,13 +137,13 @@ namespace Courseapp.Controlers
 
             if (isid)
             {
-               List<Student> student = studentService.GetStudentsByAge(age);
+                List<Student> student = studentService.GetStudentsByAge(age);
 
                 if (student != null)
                 {
-                    foreach (var  ages in student)
+                    foreach (var ages in student)
                     {
-                        Helper.ConsolColor(ConsoleColor.Green, $"Student ID:{ages.id } - Student name:{ages .Name} - Student surname:{ages .Surname} - Student Age : {ages .Age} - Student Group : {ages .Group.Name} ");
+                        Helper.ConsolColor(ConsoleColor.Green, $"Student ID:{ages.id} - Student name:{ages.Name} - Student surname:{ages.Surname} - Student Age : {ages.Age} - Student Group : {ages.Group.Name} ");
                     }
                 }
                 else
@@ -158,8 +158,100 @@ namespace Courseapp.Controlers
                 goto Studentage;
             }
         }
+        public void DeleteStudent()
+        {
+        Delete: Helper.ConsolColor(ConsoleColor.Cyan, "Add student Id");
+            string studentid = Console.ReadLine();
+            if (string.IsNullOrEmpty(studentid))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add Id");
+                goto Delete;
+            }
+            int id;
+            bool isid = int.TryParse(studentid, out id);
+
+            if (isid)
+            {
+                Student student = studentService.Getstudentbyid(id);
+                if (student != null)
+                {
+                    studentService.DeleteStudent(id);
+                    Helper.ConsolColor(ConsoleColor.Cyan, $"Student ID : {id} delete succesfully");
+                }
+                else
+                {
+                    Helper.ConsolColor(ConsoleColor.Red, $"You dont have a Student this ID{id}");
+                }
+            }
+            else
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Add corret ID type");
+            }
+        }
+        public void StudentsByName()
+        {
+           name: Helper.ConsolColor(ConsoleColor.Cyan, "Add Student Name");
+            string name = Console.ReadLine();
+            if (string.IsNullOrEmpty(name))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add name");
+                goto name;
+            }
+
+            List<Student> students = studentService.SearchMethodForStudentsByName(name);
+
+            if (students.Count != 0)
+            {
+                foreach (Student student in students)
+                {
+                    Helper.ConsolColor(ConsoleColor.Green, $"Student ID:{student.id} - Student name:{student.Name} - Student surname:{student.Surname} - Student Age : {student.Age} - Student Group : {student.Group.Name} ");
+                }
+            }
+            else
+            {
+                Helper.ConsolColor(ConsoleColor.Red, $"Dont have a Student this name{name}");
+                goto name;
+            }
+
+        }
+
+        public void AllStudentsGroupID()
+        {
+        GroupID: Helper.ConsolColor(ConsoleColor.Cyan, "Add group Id");
+            string studentid = Console.ReadLine();
+            if (string.IsNullOrEmpty(studentid))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add Id");
+                goto GroupID;
+            }
+            int id;
+            bool isid = int.TryParse(studentid, out id);
+
+            if (isid)
+            {
+                List <Student > students =studentService.GetAllStudentsByGroupId (id);
+
+                if (students.Count != 0)
+                {
+                    foreach (Student student in students)
+                    {
+                        Helper.ConsolColor(ConsoleColor.Green, $"Student ID:{student.id} - Student name:{student.Name} - Student surname:{student.Surname} - Student Age : {student.Age} - Student Group : {student.Group.Name} ");
+                    }
+                }
+                else
+                {
+                    Helper.ConsolColor(ConsoleColor.Red, "This group dont have a student");
+                    goto GroupID;
+                }
+            }
+            else
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add corret ID type");
+                goto GroupID;
+            }
+        }
+
+
     }
-
-
 }
 

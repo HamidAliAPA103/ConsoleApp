@@ -35,7 +35,7 @@ namespace RepositoryLayer.Repositories.Implementations
         }
         public List<Student> GetAllStudentByGroupId(Predicate<Student> predicate)
         {
-            throw new NotImplementedException();
+            return predicate != null ? AppDbConText<Student>.datas.FindAll(predicate) : AppDbConText<Student>.datas;
         }
 
         public List<Student> GetStudentByAge(Predicate<Student> predicate)
@@ -46,7 +46,7 @@ namespace RepositoryLayer.Repositories.Implementations
 
         public List<Student> SearchMethodForStudentsByName(Predicate<Student> predicate)
         {
-            throw new NotImplementedException();
+            return predicate != null ? AppDbConText<Student>.datas.FindAll(predicate) : AppDbConText<Student>.datas;
         }
 
         public void UpdateStudenr(Student data)

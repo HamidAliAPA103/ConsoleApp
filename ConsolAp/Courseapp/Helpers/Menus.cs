@@ -19,6 +19,9 @@ namespace Courseapp.Helpers
         CreateStudent=9,
         GetStudentById=10,
         GetStudentByAge=11,
+        DeleteStudent=12,
+        StudentsByName=13,
+        AllStudentsGroupID=14,
 
     }
 }

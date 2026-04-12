@@ -101,6 +101,11 @@ namespace Courseapp.Controlers
         delete: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Id");
 
             string groupid = Console.ReadLine();
+            if (string.IsNullOrEmpty(groupid))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add Id");
+                goto delete;
+            }
 
             int id;
 
@@ -135,8 +140,13 @@ namespace Courseapp.Controlers
         }
         public void SearchGroupName()
         {
-            Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Search Name");
+        name: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Search Name");
             string name = Console.ReadLine();
+            if (string.IsNullOrEmpty(name))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add name");
+                goto name;
+            }
             List<CourseGroup> courseGroups = service.SearchMethodForGroupsByName(name);
 
             if (courseGroups.Count != 0)

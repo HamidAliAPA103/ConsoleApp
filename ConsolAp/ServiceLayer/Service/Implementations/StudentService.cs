@@ -68,7 +68,7 @@ namespace ServiceLayer.Service.Implementations
             }
 
             AppDbConText<Student>.datas.Remove(student);
-            Console.WriteLine("Student deleted");
+           
         }
 
         public List<Student> GetStudentsByAge(int age)
@@ -91,10 +91,7 @@ namespace ServiceLayer.Service.Implementations
                 .Where(s => s.Group != null && s.Group.id == groupId)
                 .ToList();
 
-            if (students.Count == 0)
-            {
-                Console.WriteLine("Bu qrupa aid student tapılmadı");
-            }
+          
 
             return students;
         }
@@ -105,36 +102,14 @@ namespace ServiceLayer.Service.Implementations
                 .Where(s => !string.IsNullOrWhiteSpace(s.Name) &&
                             s.Name.ToLower().Contains(name.ToLower()))
                 .ToList();
-
-            if (students.Count == 0)
-            {
-                Console.WriteLine("Bu ada uyğun student tapılmadı");
-            }
-
             return students;
         }
 
         public Student UpdateStudent(int id, Student student)
         {
-            var existStudent = AppDbConText<Student>.datas.Find(s => s.id == id);
+            var Student = AppDbConText<Student>.datas.Find(s => s.id == id);
 
-            if (existStudent is null)
-            {
-                Console.WriteLine("Yenilənəcək student tapılmadı");
-                return null;
-            }
-
-            existStudent.Name = student.Name;
-            existStudent.Surname = student.Surname;
-            existStudent.Age = student.Age;
-
-            if (student.Group != null)
-            {
-                existStudent.Group = student.Group;
-            }
-
-            Console.WriteLine("Student məlumatları yeniləndi");
-            return existStudent;
+            return Student;
         }
     }
 }
