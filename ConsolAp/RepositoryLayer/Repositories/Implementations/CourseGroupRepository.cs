@@ -56,12 +56,12 @@ namespace RepositoryLayer.Repositories.Implementations
 
         public List<CourseGroup> GetAllGroupsByRoom(Predicate<CourseGroup> predicate)
         {
-            throw new NotImplementedException();
+            return predicate != null ? AppDbConText<CourseGroup>.datas.FindAll(predicate) : AppDbConText<CourseGroup>.datas;
         }
 
         public List<CourseGroup> GetAllGroupsByTeacher(Predicate<CourseGroup> predicate)
         {
-            throw new NotImplementedException();
+            return predicate != null ? AppDbConText<CourseGroup>.datas.FindAll(predicate) : AppDbConText<CourseGroup>.datas;
         }
 
 

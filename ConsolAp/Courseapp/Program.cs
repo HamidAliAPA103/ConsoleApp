@@ -9,11 +9,13 @@ namespace Courseapp
     internal class Program
     {
         static void Main(string[] args)
+
         {
             CourseGroupControlers courseGroupControlers = new();
+            StudentControlers studentControlers = new();
 
-        start: Helper.ConsolColor(ConsoleColor.Cyan, "Select one options! ");
-            Helper.ConsolColor(ConsoleColor.Yellow, "1 - Creat group\n2 - Get group  by id\n3 - GetAll Group\n4 - Delete Group\n5 - Update Group\n6 - Search Group Name ");
+             start: Helper.ConsolColor(ConsoleColor.Cyan, "Select one options! ");
+            GetMenu();
 
             while (true)
             {
@@ -26,23 +28,38 @@ namespace Courseapp
                 {
                     switch (selectnum)
                     {
-                        case 1:
+                        case (int)Menus.Creat:
                             courseGroupControlers.Creat();
                             goto start;
-                        case 2:
+                        case (int)Menus.GetbyId :
                             courseGroupControlers.GetbyId();
                             goto start;
-                        case 3:
+                        case (int)Menus.GetAll :
                             courseGroupControlers.GetAll();
                             goto start;
-                        case 4:
+                        case (int)Menus.Delete :
                             courseGroupControlers.Delete();
                             goto start;
-                        case 5:
+                        case (int)Menus.Update :
                             courseGroupControlers.Update();
                             goto start;
-                        case 6:
+                        case (int)Menus.SearchGroupName:
                             courseGroupControlers.SearchGroupName();
+                            goto start;
+                        case (int)Menus.GetByRoom :
+                            courseGroupControlers.GetByRoom();
+                            goto start;
+                        case (int)Menus.GetByTeacher :
+                            courseGroupControlers.GetByTeacher();
+                            goto start;
+                        case (int)Menus.CreateStudent:
+                             studentControlers.CreateStudent();
+                            goto start;
+                        case (int)Menus.GetStudentById:
+                             studentControlers.GetStudentById();
+                            goto start;
+                        case (int)Menus.GetStudentByAge:
+                             studentControlers.GetStudentByAge();
                             goto start;
                     }
                 }
@@ -53,7 +70,13 @@ namespace Courseapp
                 }
             }
         }
+
+        public static void GetMenu()
+        {
+            Helper.ConsolColor(ConsoleColor.Yellow, "1 - Creat group\n2 - Get group  by id\n3 - GetAll Group\n4 - Delete Group\n5 - Update Group\n6 - Search Group Name\n7 - Get group  by room\n8 - Get group  by teacher\n9 - Creat student\n10 - Get student by id \n11 - Get Student by Age");
+        }
     }
+
 
 
 }

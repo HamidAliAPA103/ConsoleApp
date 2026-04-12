@@ -14,12 +14,27 @@ namespace Courseapp.Controlers
         CourseGroupService service = new();
         public void Creat()
         {
-            Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Name");
+        groupname: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Name");
             string groupname = Console.ReadLine();
-            Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Teacher");
+            if (string.IsNullOrEmpty(groupname))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add name");
+                goto groupname;
+            }
+        groupteacher: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Teacher");
             string groupteacher = Console.ReadLine();
+            if (string.IsNullOrEmpty(groupteacher))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add teacher name");
+                goto groupteacher;
+            }
         room: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Room");
             string grouproom = Console.ReadLine();
+            if (string.IsNullOrEmpty(grouproom))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add room");
+                goto room;
+            }
             int room;
             bool isgrouproom = int.TryParse(grouproom, out room);
             if (isgrouproom)
@@ -37,10 +52,9 @@ namespace Courseapp.Controlers
                 goto room;
             }
         }
-
         public void GetbyId()
         {
-            groupid: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Id");
+        groupid: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Id");
 
             string groupid = Console.ReadLine();
 
@@ -67,23 +81,22 @@ namespace Courseapp.Controlers
                 goto groupid;
             }
         }
-
         public void GetAll()
         {
-            List<CourseGroup >  courseGroup = service.GetAllGroups ();
-            if ( courseGroup.Count != 0)
+            List<CourseGroup> courseGroup = service.GetAllGroups();
+            if (courseGroup.Count != 0)
             {
-                foreach (var  group in courseGroup)
+                foreach (var group in courseGroup)
                 {
                     Helper.ConsolColor(ConsoleColor.Green, $"Group:{group.id} - Group name:{group.Name} - Group teacher:{group.Teacher} - Group room:{group.Room} ");
                 }
-            }else
+            }
+            else
             {
-                Helper.ConsolColor(ConsoleColor.Red,"Pleas add Group");
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add Group");
             }
         }
-
-        public void Delete()  
+        public void Delete()
         {
         delete: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Id");
 
@@ -120,12 +133,11 @@ namespace Courseapp.Controlers
                 }
             }
         }
-
         public void SearchGroupName()
         {
-            Helper.ConsolColor(ConsoleColor.Cyan , "Add Group Search Name");
+            Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Search Name");
             string name = Console.ReadLine();
-            List <CourseGroup > courseGroups =service.SearchMethodForGroupsByName (name);
+            List<CourseGroup> courseGroups = service.SearchMethodForGroupsByName(name);
 
             if (courseGroups.Count != 0)
             {
@@ -142,9 +154,9 @@ namespace Courseapp.Controlers
         }
         public void Update()
         {
-          Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Id");
+            Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Id");
 
-            string groupid = Console.ReadLine();
+        groupid: string groupid = Console.ReadLine();
 
             if (string.IsNullOrWhiteSpace(groupid))
             {
@@ -155,24 +167,134 @@ namespace Courseapp.Controlers
 
             bool isid = int.TryParse(groupid, out id);
 
-            if ( isid)
+            if (isid)
             {
                 var findgroup = service.GetGroupById(id);
 
                 if (findgroup != null)
                 {
-                    Helper.ConsolColor(ConsoleColor.DarkBlue, $"Curren name{findgroup.Name} Add new group name");
+                    Helper.ConsolColor(ConsoleColor.Cyan, $"Curren name : {findgroup.Name} Add new group name :");
 
                     string newgroupname = Console.ReadLine();
 
-                    Helper.ConsolColor(ConsoleColor.DarkBlue, $"Curren teacher name{findgroup.Teacher} Add new teacher name");
+                    if (string.IsNullOrWhiteSpace(newgroupname))
+                    {
+                        newgroupname = findgroup.Name;
+                    }
+
+                    Helper.ConsolColor(ConsoleColor.Cyan, $"Curren teacher name : {findgroup.Teacher} Teacher Add new teacher name :");
 
                     string newteachername = Console.ReadLine();
+
+                    if (string.IsNullOrWhiteSpace(newteachername))
+                    {
+                        newteachername = findgroup.Teacher;
+                    }
+
+                newroom: Helper.ConsolColor(ConsoleColor.Cyan, $"Curren group room : {findgroup.Room} Add new room :");
+
+                    string newgrouproom = Console.ReadLine();
+
+                    int newroom = findgroup.Room;
+
+                    if (!string.IsNullOrWhiteSpace(newgrouproom))
+                    {
+                        bool isnewroom = int.TryParse(newgrouproom, out newroom);
+
+                        if (!isnewroom)
+                        {
+                            Helper.ConsolColor(ConsoleColor.DarkRed, "Add corret group room type");
+
+                            goto newroom;
+                        }
+                    }
+                    CourseGroup courseGroup = new CourseGroup { Name = newgroupname, Teacher = newteachername, Room = newroom };
+
+                    var updategeroup = service.UpdateGroup(id, courseGroup);
+
+                    if (updategeroup is null)
+                    {
+                        Helper.ConsolColor(ConsoleColor.DarkRed, "Group not updated");
+                        goto groupid;
+                    }
+                    else
+                    {
+                        Helper.ConsolColor(ConsoleColor.Green, $"Group ID :{updategeroup.id},Group name : {courseGroup.Name}, Group teacher :{courseGroup.Teacher}, Group room :{courseGroup.Room}");
+                    }
+
                 }
+                else
+                {
+                    Helper.ConsolColor(ConsoleColor.DarkRed, "Group not found");
+                    goto groupid;
+                }
+            }
+            else
+            {
+                Helper.ConsolColor(ConsoleColor.DarkRed, "Add corret ID type");
+                goto groupid;
             }
 
         }
-          
+        public void GetByRoom()
+        {
+
+        grouproom: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Room");
+
+            string grouproom = Console.ReadLine();
+
+            int room;
+
+            bool isroom=int.TryParse(grouproom, out room);
+
+            if ( isroom )
+            {
+                List <CourseGroup > courseGroup = service.GetAllGroupsByRoom(room);
+
+                if ( courseGroup.Count != 0 )
+                {
+                    foreach (var  group in courseGroup)
+                    {
+                        Helper.ConsolColor(ConsoleColor.Green, $"Group:{group.id} - Group name:{group .Name} - Group teacher:{group .Teacher} - Group room:{group .Room} ");
+                    }
+                }
+                else
+                {
+                    Helper.ConsolColor(ConsoleColor.Red, "Group not found");
+                    goto grouproom ;
+                }
+            }
+            else
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Add corret Group room type");
+                goto grouproom;
+            }
+
+
+        }
+        public void GetByTeacher()
+        {
+        teacher:  Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Teacher");
+
+            string name = Console.ReadLine();
+
+            List <CourseGroup > courseGroups = service .GetAllGroupsByTeacher(name);
+
+            if ( courseGroups.Count != 0)
+            {
+                foreach (var  teacher in courseGroups)
+                {
+                    Helper.ConsolColor(ConsoleColor.Green, $"Group:{teacher .id} - Group name:{teacher .Name} - Group teacher:{teacher .Teacher} - Group room:{teacher .Room} ");
+                }
+            }
+            else
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Group not found");
+                goto teacher;
+            }
+        }
+
+
 
 
     }

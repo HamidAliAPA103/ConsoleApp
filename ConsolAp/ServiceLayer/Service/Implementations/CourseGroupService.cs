@@ -54,7 +54,7 @@ namespace ServiceLayer.Service.Implementations
 
         public List<CourseGroup> SearchMethodForGroupsByName(string name)
         {
-            return _groupRepository.GetAllGroups(l=>l.Name.ToLower().Trim() == name.ToLower().Trim() );
+            return _groupRepository.GetAllGroups(l => string.Equals(l.Name ?.Trim(), name ?.Trim(), StringComparison.OrdinalIgnoreCase));
         }
         public CourseGroup UpdateGroup(int id,CourseGroup courseGroup)
         {
@@ -69,14 +69,14 @@ namespace ServiceLayer.Service.Implementations
             return GetGroupById (id);
 
         }
-        public List<CourseGroup> GetAllGroupsByRoom(int room)
+        public List<CourseGroup> GetAllGroupsByRoom(int  room)
         {
-            throw new NotImplementedException();
+           return _groupRepository.GetAllGroups(l=>l.Room ==room);
         }
 
         public List<CourseGroup> GetAllGroupsByTeacher(string teacher)
         {
-            throw new NotImplementedException();
+            return _groupRepository.GetAllGroups(l => string.Equals(l.Teacher?.Trim(), teacher?.Trim(), StringComparison.OrdinalIgnoreCase));
         }
 
 

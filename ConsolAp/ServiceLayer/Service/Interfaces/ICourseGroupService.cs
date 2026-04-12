@@ -17,7 +17,7 @@ namespace ServiceLayer.Service.Interfaces
         CourseGroup  GetGroupById(int id);
         List<CourseGroup > GetAllGroupsByTeacher(string teacher );
 
-        List<CourseGroup > GetAllGroupsByRoom(int room);
+        List<CourseGroup > GetAllGroupsByRoom(int  room);
         List<CourseGroup> GetAllGroups();
 
         List<CourseGroup> SearchMethodForGroupsByName(string name );
