@@ -70,6 +70,9 @@ namespace Courseapp
                         case (int)Menus.AllStudentsGroupID :
                              studentControlers.AllStudentsGroupID();
                             goto start;
+                        case (int)Menus.StudensBySurName  :
+                             studentControlers.StudensBySurName();
+                            goto start;
                     }
                 }
                 else
@@ -82,7 +85,7 @@ namespace Courseapp
 
         public static void GetMenu()
         {
-            Helper.ConsolColor(ConsoleColor.Yellow, "1 - Creat group\n2 - Get group  by id\n3 - GetAll Group\n4 - Delete Group\n5 - Update Group\n6 - Search Group Name\n7 - Get group  by room\n8 - Get group  by teacher\n9 - Creat student\n10 - Get student by id \n11 - Get Student by Age\n12 - Delete Student\n13 - Get Student by name\n14 - All student by ID Group");
+            Helper.ConsolColor(ConsoleColor.Yellow, "1 - Creat group\n2 - Get group  by id\n3 - GetAll Group\n4 - Delete Group\n5 - Update Group\n6 - Search Group Name\n7 - Get group  by room\n8 - Get group  by teacher\n9 - Creat student\n10 - Get student by id \n11 - Get Student by Age\n12 - Delete Student\n13 - Get Student by name\n14 - All student by ID Group\n15 - Get Student by surname");
         }
     }
 

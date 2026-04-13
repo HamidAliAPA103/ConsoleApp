@@ -22,6 +22,7 @@ namespace Courseapp.Helpers
         DeleteStudent=12,
         StudentsByName=13,
         AllStudentsGroupID=14,
+        StudensBySurName=15,
 
     }
 }

@@ -21,11 +21,17 @@ namespace Courseapp.Controlers
                 Helper.ConsolColor(ConsoleColor.Red, "Pleas add name");
                 goto groupname;
             }
+
         groupteacher: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Teacher");
             string groupteacher = Console.ReadLine();
             if (string.IsNullOrEmpty(groupteacher))
             {
                 Helper.ConsolColor(ConsoleColor.Red, "Pleas add teacher name");
+                goto groupteacher;
+            }
+            if (groupteacher.Any(char.IsDigit))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Teacher name cannot  numbers!");
                 goto groupteacher;
             }
         room: Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Room");
@@ -111,7 +117,7 @@ namespace Courseapp.Controlers
 
             bool isid = int.TryParse(groupid, out id);
             List<CourseGroup> courseGroups = new();
-            if (courseGroups.Count == 0)
+            if (!isid && courseGroups.Count == 0)
             {
                 Helper.ConsolColor(ConsoleColor.DarkRed, "Your dont have Group");
             }
@@ -253,6 +259,12 @@ namespace Courseapp.Controlers
 
             string grouproom = Console.ReadLine();
 
+            if (string.IsNullOrEmpty(grouproom))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add room");
+                goto grouproom;
+            }
+
             int room;
 
             bool isroom=int.TryParse(grouproom, out room);
@@ -287,6 +299,11 @@ namespace Courseapp.Controlers
         teacher:  Helper.ConsolColor(ConsoleColor.Cyan, "Add Group Teacher");
 
             string name = Console.ReadLine();
+            if (string.IsNullOrEmpty(name))
+            {
+                Helper.ConsolColor(ConsoleColor.Red, "Pleas add teacher name");
+                goto teacher ;
+            }
 
             List <CourseGroup > courseGroups = service .GetAllGroupsByTeacher(name);
 
